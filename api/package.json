@@ -5,13 +5,13 @@
   "main": "src/index.js",
   "type": "commonjs",
   "scripts": {
-  "generate": "npx prisma generate",
-  "migrate": "npx prisma migrate deploy",
+  "generate": "./node_modules/.bin/prisma generate",
+  "migrate": "./node_modules/.bin/prisma migrate deploy",
   "seed": "node scripts/seed.js",
   "dev": "nodemon --watch src --exec \"npm run generate && node src/index.js\"",
   "start": "npm run generate && npm run migrate && node src/index.js",
   "build": "npm run generate && npm run migrate",
-  "postinstall": "chmod +x ./node_modules/.bin/prisma"
+  "postinstall": "chmod +x node_modules/.bin/*"
 },
   "dependencies": {
     "@prisma/client": "^6.10.1",

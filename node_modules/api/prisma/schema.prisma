@@ -1,0 +1,25 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// — your model definitions follow —
+model Technician {
+  id           Int      @id @default(autoincrement())
+  techId       Int      @unique
+  name         String
+  barcodeValue String   @unique
+  checkIns     CheckIn[]
+}
+
+model CheckIn {
+  id           Int      @id @default(autoincrement())
+  technician   Technician @relation(fields: [technicianId], references: [id])
+  technicianId Int
+  uniformSet   String
+  createdAt    DateTime @default(now())
+}

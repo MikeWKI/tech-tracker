@@ -1,0 +1,14 @@
+{
+  "name": "tech-tracker",
+  "private": true,
+  "workspaces": [
+    "api",
+    "web"
+  ],
+  "scripts": {
+    "start:api": "npm --workspace api run start",
+    "start:web": "npm --workspace web run start",
+    "build:api": "npm --workspace api run build",
+    "build:web": "npm --workspace web run build"
+  }
+}

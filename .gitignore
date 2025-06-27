@@ -1,0 +1,13 @@
+# Node.js artifacts
+node_modules/
+npm-debug.log*
+yarn-error.log*
+# Prisma/artifacts
+api/node_modules/
+api/prisma/migrations/
+# React build
+web/node_modules/
+web/build/
+# Local env
+api/.env
+web/.env
